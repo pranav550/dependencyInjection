@@ -1,3 +1,4 @@
+import { NewService } from './new.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,4 +8,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angularDependencyInjection';
+  emp:any[];
+  text:string;
+   constructor(private newservice: NewService){}
+
+   ngOnInit(){
+     this.text = this.newservice.display()
+     this.emp = this.newservice.employee;
+   }
 }
